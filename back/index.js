@@ -4,9 +4,7 @@ const app = express()
 app.use(express.json())
 const port = 3005
 
-// const findTask = function () {}
 
-//моя база данных. ее менять
 let taskList = [
     {
         id: 'f450ac0e-8ae9-488d-9dc7-fa43cc6d238c',
@@ -40,16 +38,6 @@ let taskList = [
     }, 
 ]
 
-
-// app.get('/', (req, res) => {
-//   res.send('Hello World! ' + uuidv4())
-// })
-// app.get('/mynameis/:name/:lastname', (req, res) => {
-//     res.send('My name is ' + req.params.name + ' ' + req.params.lastname)
-// })
-
-  
-
 // Gets all tasks
 app.get('/tasks', (req, res) => {
     res.send(taskList)
@@ -73,11 +61,6 @@ app.get('/tasks/:taskId', (req, res) => {
 // Updates task with given id
 //returns updaed task
 app.put('/tasks/:taskId', (req, res) => {
-    // 1. Find a tsask with id == taskId in taskList 
-    // 2. Save an id in a variable
-    // 3. Delete task
-    // 4. Add a new task with providen parametesr and id saved in variable
-    // 5. Return resulted task 
     let task = {};
     let id = parseInt(req.params.taskId);
     for (let i = 0; i < taskList.length; i ++){
@@ -92,8 +75,6 @@ app.put('/tasks/:taskId', (req, res) => {
 // Creates new task
 // returns taskList
 app.post('/tasks', (req, res) => {
-    // 1. add to taskList a given object
-    //2. return updated tasklist
     let incomingBody = req.body;
     let check = false;
     for (let i = 0; i < taskList.length; i++){
@@ -118,9 +99,6 @@ app.post('/tasks', (req, res) => {
 // Deletes task with given id
 // returns ok or not ok 
 app.delete('/tasks/:taskId', (req, res) => {
-    // 1. find task with given id
-    //2.delete task w given id
-    //3.return updated  list of tasks
     let task = {};
     let id = req.params.taskId;
     for (let i = 0; i < taskList.length; i ++){
