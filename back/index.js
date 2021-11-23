@@ -1,9 +1,10 @@
-const express = require('express')
+const express = require('express');
 const { v4: uuidv4 } = require('uuid');
-const app = express()
-app.use(express.json())
-const port = 3005
-
+const app = express();
+app.use(express.json());
+const port = 3005;
+const cors = require('cors');
+app.use(cors());
 
 let taskList = [
     {
@@ -111,7 +112,7 @@ app.delete('/tasks/:taskId', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`CORS-enabled web server listening at http://localhost:${port}`)
 })
 
 
