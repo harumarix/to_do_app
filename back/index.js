@@ -90,8 +90,6 @@ app.post('/tasks', (req, res) => {
         incomingBody.id = uuidv4();
         taskList.push(incomingBody);
     };
-
-
     res.send(taskList)
 })
 
@@ -100,7 +98,6 @@ app.post('/tasks', (req, res) => {
 // Deletes task with given id
 // returns ok or not ok 
 app.delete('/tasks/:taskId', (req, res) => {
-    let task = {};
     let id = req.params.taskId;
     for (let i = 0; i < taskList.length; i ++){
         if (id === taskList[i].id){
