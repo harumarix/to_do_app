@@ -1,0 +1,107 @@
+html,
+body {
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+html {
+  min-height: 100vh;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+
+body {
+  font-size: 14px;
+  font-weight: 500;
+  color: #494949;
+  min-width: 320px;
+  overflow-y: overlay;
+  overflow-x: hidden;
+  font-family: "Oswald";
+  font-weight: 500;
+  z-index: -2;
+}
+
+
+input{
+  max-width: 770px;
+  width: 100%;
+}
+.list_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.list_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ECE5E5;
+  padding: 20px;
+  width: 900px;
+}
+
+.list_task {
+  display: flex;
+  align-items: center;
+  background-color: #C4C4C4;
+  margin-bottom: 20px;
+  padding: 5px;
+  min-height: 30px;
+}
+.list_task:hover {
+  background-color: #e2d7d7;
+}
+.list_task-number {
+  margin-right: 20px;
+}
+.list_check-field input {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: green;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+
+
+.list_save_hidden {
+  display: none;
+}
+ 
+.list_delete {
+  color: red;
+  cursor: pointer;
+}
+
+.list_btn {
+  text-align: right;
+  background-color: #C4C4C4;
+  height: 30px;
+  margin-top: 10px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_btn:hover{
+  background-color: #ECE5E5;
+  cursor: pointer;
+}
