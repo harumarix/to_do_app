@@ -1,6 +1,9 @@
 let counter = 5;
 let deleteButtons = document.querySelectorAll(".list-top_delete");
 let inputs = document.querySelectorAll(".list-top_task-text");
+let checkBoxes = document.querySelectorAll("input[name=checkbox]");
+let movingElement;
+let bottomContainer = document.querySelector('.list-bottom_container');
 
 const getRequest = async function (url){
     let response = await fetch(url, {
@@ -51,7 +54,8 @@ let observer = new MutationObserver(mutationRecords => {
                 deleteButtons[i].closest(".list-top_task").remove() 
             }
         })
-    };   
+    };  
+
     for (let i = 0; i < inputs.length; i++){
         inputs = document.querySelectorAll(".list-top_task-text");
         inputs[i].addEventListener('focusout', (event) => {
@@ -116,3 +120,11 @@ checkboxes.forEach(element => {
       });
 });
 
+for (let i = 0; i < checkBoxes.length; i ++){
+    checkBoxes = document.querySelectorAll("input[name=checkbox]");
+    checkBoxes[i].addEventListener("change", () => {
+        movingElement = checkBoxes[i].parentElement.parentElement;
+        checkBoxes[i].parentElement.parentElement.remove();
+        bottomContainer.insertAdjacentHTML('beforeend', movingElement);
+    })
+}; 
