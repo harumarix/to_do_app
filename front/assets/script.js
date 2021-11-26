@@ -1,6 +1,7 @@
 let counter = 5;
 let deleteButtons = document.querySelectorAll(".list-top_delete");
 let inputs = document.querySelectorAll(".list-top_task-text");
+
 const getRequest = async function (url){
     let response = await fetch(url, {
         method: 'GET', 
@@ -103,4 +104,15 @@ document.querySelector("#create_new").addEventListener("click", ()=>{
 //     });
 // };  
 
+
+let checkboxes = document.querySelectorAll("input[name=checkbox]");
+checkboxes.forEach(element => {
+    element.addEventListener('change', function() {
+        if (this.checked) {
+          console.log("Checkbox is checked..");
+        } else {
+          console.log("Checkbox is not checked..");
+        }
+      });
+});
 
